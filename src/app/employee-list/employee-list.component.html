@@ -1,1 +1,43 @@
-<p>employee-list works!</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Employee List</div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="searchString"
+                      placeholder="Type to search..."
+                      
+                    />
+                  </div>
+                </div>
+              </form>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email Id</th>
+                <th scope="col">Project Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employeeList | paginate: { itemsPerPage: 10, currentPage: pageNumber } ;let i = index;">
+                    <th scope="row">{{i+1}}</th>
+                <th>{{employee.employeeId}}</th>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.emailId}}</td>
+                <td>{{employee.currentProjectName}}</td>
+              </tr>        
+            </tbody>      
+          </table>
+          <pagination-controls (pageChange)="pageNumber = $event" class="employee-list-pagination"></pagination-controls>
+        </div>
+      </div>
+      

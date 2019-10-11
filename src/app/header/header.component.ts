@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
- public title: string = 'Employee-Portal';
+ public title: string = 'Employee Portal';
  private user: string = 'Admin';
 
   constructor() { }
