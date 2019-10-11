@@ -1,0 +1,14 @@
+.navbar-default{
+    background-color: white;    
+}
+
+.nav.navbar-nav li a {
+    color: #009900;
+    font-size: large;    
+}
+
+img{
+    width: 50%; 
+}
+
+
