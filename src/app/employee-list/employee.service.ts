@@ -8,4 +8,8 @@ export class EmployeeService {
   getAllEmployeeDetails():EmployeeDetail[]{
     return employeeDetailsListJson['default'];
   }
+  getEmployeeDetailsById(empId : string):EmployeeDetail{
+    this.employeeDetailsList=this.getAllEmployeeDetails();
+    return this.employeeDetailsList.find(empDetail => empDetail.employeeId === empId);
+  }
 }

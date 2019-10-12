@@ -1,1 +1,182 @@
-<p>employee-details works!</p>
+<div class="panel panel-default">
+    <div class="panel-heading">Employee Details</div>
+    <div class="panel-body">
+        <div class="conatiner">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- Start : Information Row -->
+                            <div class="row">
+                                <!-- Start : Personal Information column -->
+                                <div class="col-xs-6">
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading ">Personal Information</div>
+                                            <div class="panel-body">
+                                                <!-- Start: last name row -->
+                                                <div class="row">
+                                                    <label class="col-md-6 control-label custom-label info-label">Last
+                                                        Name :</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.lastName}}
+                                                    </label>
+                                                    <!-- End: last name row -->
+                                                </div>
+
+                                                <!-- Start: mobile number row -->
+                                                <div class="row">
+                                                    <label class="col-md-6 control-label custom-label info-label">Mobile
+                                                        Number :</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.mobileNumber}}
+                                                    </label>
+                                                    <!-- End: mobile number row -->
+                                                </div>
+
+                                                <!-- Start: gender row -->
+                                                <div class="row">
+                                                    <label class="col-md-6 control-label custom-label info-label">Gender
+                                                        :
+                                                    </label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.gender}}
+                                                    </label>
+                                                    <!-- End: gender row -->
+                                                </div>
+
+                                                <!-- Start: home address row -->
+                                                <div class="row">
+                                                    <label class="col-md-6 control-label custom-label info-label">Home
+                                                        Address:</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.homeAddress}}
+                                                    </label>
+                                                    <!-- End: last name row -->
+                                                </div>
+
+                                                <!-- Start: hobbies row -->
+                                                <div class="row">
+                                                    <label
+                                                        class="col-md-6 control-label custom-label info-label">Hobbies
+                                                        :</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.hobbies}}
+                                                    </label>
+                                                    <!-- End: hobbies row -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  End : Personal Information column-->
+                                </div>
+
+                                <!-- Start : Work Information column -->
+                                <div class="col-xs-6">
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">Work Information</div>
+                                            <div class="panel-body">
+                                                <!-- Start: employee Id row -->
+                                                <div class="row">
+                                                    <label
+                                                        class="col-md-6 control-label custom-label info-label">Employee
+                                                        Id :</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.employeeId}}
+                                                    </label>
+                                                    <!-- End: employee Id row -->
+                                                </div>
+
+                                                <!-- Start: email Id row -->
+                                                <div class="row">
+                                                    <label class="col-md-6 control-label custom-label info-label">Email
+                                                        Id :</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.emailId}}
+                                                    </label>
+                                                    <!-- End: email Id row -->
+                                                </div>
+
+                                                <!-- Start: Work Address row -->
+                                                <div class="row">
+                                                    <label class="col-md-6 control-label custom-label info-label">Work
+                                                        Address :
+                                                    </label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.workAddress}}
+                                                    </label>
+                                                    <!-- End: Work Address row -->
+                                                </div>
+
+                                                <!-- Start: home address row -->
+                                                <div class="row">
+                                                    <label class="col-md-6 control-label custom-label info-label">
+                                                        Project
+                                                        Name:</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.currentProjectName}}
+                                                    </label>
+                                                    <!-- End: last name row -->
+                                                </div>
+
+                                                <!-- Start: hobbies row -->
+                                                <div class="row">
+                                                    <label
+                                                        class="col-md-6 control-label custom-label info-label">Hobbies
+                                                        :</label>
+                                                    <label
+                                                        class="col-md-6 control-label custome-label info-data">{{employeeDetails.hobbies}}
+                                                    </label>
+                                                    <!-- End: hobbies row -->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  End : Work Information column-->
+                                </div>
+
+                                <!-- Rating Info Start -->
+                <div class="col-xs-6">
+                        <div class="panel-group">
+                          <div class="panel panel-default">
+                            <div class="panel-heading performance-information">Performance</div>
+                            <div class="panel-body">
+                              <div class="row">
+                                <label class="col-md-4 control-label ">Rating</label>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-3 control-label">
+                                    <form #form="ngForm">
+                                        <bar-rating name="rating" [(ngModel)]="employeeDetails.rating" [max]="5" required >
+                                        </bar-rating>
+                                      </form>
+                                </div>
+                                <div class="col-md-9 control-label" *ngIf=notificationFlag>
+                                    <div class="alert alert-success alert-dismissible">
+                                        <a class="close" data-dismiss="alert" aria-label="close" (click)="notificationFlag=False">&times;</a>
+                                        <strong>Success!</strong> The rating for {{employeeDetails.lastName}} is changed.
+                                    </div>                            
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4 control-label">
+                                    <button class="btn btn-primary" (click)="updateRating();">Save</button>
+                                </div>
+                              </div>                        
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Rating Info Ends -->
+                                    <!-- End : Information Row -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,5 +1,5 @@
 export class EmployeeDetail{
-    private employeeId : number;
+    public employeeId : string;
     private lastName : string;
     private mobileNumber : string;
     private emailId : string;
@@ -10,7 +10,7 @@ export class EmployeeDetail{
     private hobbies : string;
     private rating:number;
 
-    constructor(empId : number,lastName : string,
+    constructor(empId : string,lastName : string,
         mobileNumber : string,emailId : string,gender : string,workAddress : string,
         homeAddress : string,currentProjectName : string,hobbies : string,rating : number){
             this.employeeId=empId;
@@ -25,7 +25,7 @@ export class EmployeeDetail{
             this.rating=rating;
 
     }
-     getEmpId(){
+     public getEmpId():string{
         return this.employeeId;
     }
     setRatings(rating:number){

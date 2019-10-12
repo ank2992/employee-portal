@@ -12,7 +12,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EmployeeListComponent implements OnInit {
   public employeeList:EmployeeDetail[];
   public pageNumber:number=1;
-  constructor(private employeeService:EmployeeService,private router:Router,private activeRoute:ActivatedRoute) {
+  public queryEmployeeId:string;
+  constructor(private employeeService:EmployeeService) {
 
    }
 
