@@ -138,45 +138,50 @@
                                 </div>
 
                                 <!-- Rating Info Start -->
-                <div class="col-xs-6">
-                        <div class="panel-group">
-                          <div class="panel panel-default">
-                            <div class="panel-heading performance-information performance-info">Performance</div>
-                            <div class="panel-body">
-                              <div class="row">
-                                <label class="col-md-4 control-label ">Rating</label>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-3 control-label">
-                                    <form #form="ngForm">
-                                        <bar-rating name="rating" [(ngModel)]="employeeDetails.rating" [max]="5" required >
-                                        </bar-rating>
-                                      </form>
+                                <div class="col-xs-6">
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading performance-information performance-info">
+                                                Performance</div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <label class="col-md-4 control-label ">Rating</label>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 control-label">
+                                                        <form #form="ngForm">
+                                                            <bar-rating name="rating"
+                                                                [(ngModel)]="employeeDetails.rating" [max]="5" required>
+                                                            </bar-rating>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-md-9 control-label" *ngIf=notificationFlag>
+                                                        <div class="alert alert-success alert-dismissible">
+                                                            <a class="close" data-dismiss="alert" aria-label="close"
+                                                                (click)="notificationFlag=False">&times;</a>
+                                                            <strong>Success!</strong> The rating for
+                                                            {{employeeDetails.lastName}} is changed.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 control-label">
+                                                        <button class="btn btn-primary"
+                                                            (click)="updateRating();">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-9 control-label" *ngIf=notificationFlag>
-                                    <div class="alert alert-success alert-dismissible">
-                                        <a class="close" data-dismiss="alert" aria-label="close" (click)="notificationFlag=False">&times;</a>
-                                        <strong>Success!</strong> The rating for {{employeeDetails.lastName}} is changed.
-                                    </div>                            
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4 control-label">
-                                    <button class="btn btn-primary" (click)="updateRating();">Save</button>
-                                </div>
-                              </div>                        
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Rating Info Ends -->
-                                    <!-- End : Information Row -->
-                                </div>
+                                <!-- Rating Info Ends -->
+                                <!-- End : Information Row -->
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
+</div>

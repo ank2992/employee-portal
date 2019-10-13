@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes,RouterModule } from '@angular/router';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { Routes, RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BarRatingModule } from "ngx-bar-rating";
 import { FormsModule } from '@angular/forms';
 
@@ -11,9 +11,9 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './employee-list/employee-details/employee-details.component';
 import { EmployeeService } from './employee-list/employee.service';
 import { FilterPipe } from './filter.pipe';
-const appRoutes : Routes=[
-{'path':'',component:EmployeeListComponent},
-{'path':'employee-details/:id',component:EmployeeDetailsComponent}
+const appRoutes: Routes = [
+  { 'path': '', component: EmployeeListComponent },
+  { 'path': 'employee-details/:id', component: EmployeeDetailsComponent }
 ]
 
 @NgModule({
@@ -31,7 +31,7 @@ const appRoutes : Routes=[
     BarRatingModule,
     FormsModule
   ],
-  providers:[EmployeeService],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

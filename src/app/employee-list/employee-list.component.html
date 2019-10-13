@@ -1,45 +1,45 @@
 <div class="panel panel-default">
-        <div class="panel-heading">Employee List</div>
-        <div class="panel-body">
-            <form>
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i class="glyphicon glyphicon-search"></i>
-                    </div>
-                    <input type="text" class="form-control" name="searchString" placeholder="Search By Employee ID"
-                    [(ngModel)]="queryEmployeeId" />
-                  </div>
-                </div>
-              </form>
-              <!-- Start : Employee details table -->
-          <table class="table table-striped table-bordered">
-            <!-- Start : Table Heading -->
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Employee ID</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Email Id</th>
-                <th scope="col">Project Name</th>
-              </tr>
-              <!-- End : Table Heading -->
-            </thead>
-            <tbody>
-              <!-- Start : Lopping the details -->
-              <tr *ngFor="let employee of employeeList
-              | filter:queryEmployeeId:'employeeId'
-               | paginate: { itemsPerPage: 10, currentPage: pageNumber } ;let i = index;" [routerLink]="['employee-details', employee.employeeId]">
-                    <th scope="row">{{i+1}}</th>
-                <th>{{employee.employeeId}}</th>
-                <td>{{employee.lastName}}</td>
-                <td>{{employee.emailId}}</td>
-                <td>{{employee.currentProjectName}}</td>
-              </tr>        
-            </tbody>      
-          </table>
-          <!-- End : Employee details table -->
-          <pagination-controls (pageChange)="pageNumber = $event" class="employee-list-pagination"></pagination-controls>
+  <div class="panel-heading">Employee List</div>
+  <div class="panel-body">
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
+          </div>
+          <input type="text" class="form-control" name="searchString" placeholder="Search By Employee ID"
+            [(ngModel)]="queryEmployeeId" />
         </div>
       </div>
-      
+    </form>
+    <!-- Start : Employee details table -->
+    <table class="table table-striped table-bordered">
+      <!-- Start : Table Heading -->
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Employee ID</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Project Name</th>
+        </tr>
+        <!-- End : Table Heading -->
+      </thead>
+      <tbody>
+        <!-- Start : Lopping the details -->
+        <tr *ngFor="let employee of employeeList
+              | filter:queryEmployeeId:'employeeId'
+               | paginate: { itemsPerPage: 10, currentPage: pageNumber } ;let i = index;"
+          [routerLink]="['employee-details', employee.employeeId]">
+          <th scope="row">{{i+1}}</th>
+          <th>{{employee.employeeId}}</th>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.emailId}}</td>
+          <td>{{employee.currentProjectName}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- End : Employee details table -->
+    <pagination-controls (pageChange)="pageNumber = $event" class="employee-list-pagination"></pagination-controls>
+  </div>
+</div>

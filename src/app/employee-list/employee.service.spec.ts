@@ -1,3 +1,6 @@
+/**
+ * Unit testing for the custom service EmployeeService
+ */
 import { TestBed } from '@angular/core/testing';
 
 import { EmployeeService } from './employee.service';
@@ -7,8 +10,9 @@ import { EmployeeDetail } from './employee-details/employee.model';
 describe('EmployeeService', () => {
   let service: EmployeeService;
   beforeEach(() => {
-    
-    service = new EmployeeService(); });
+
+    service = new EmployeeService();
+  });
 
   it('should start the Employee Service', () => {
     expect(service).toBeTruthy;
@@ -32,7 +36,7 @@ describe('EmployeeService', () => {
       currentProjectName: 'Tin',
       hobbies: 'Mule deer',
       rating: 3
-  };
+    };
     expect(service.getEmployeeDetailsById(employeeId)).toEqual(employeeDetails);
   });
 });

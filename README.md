@@ -1,27 +1,35 @@
 # EmployeePortal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
+## Table of contents
+  - [General info](#general-info)
+  - [Technologies](#technologies)
+  - [Setup](#setup)
 
-## Development server
+## General info
+This project demonstrates the usage of Angular to create a simple Employee Portal which serve the below mentioned feature:
+* Landing Page : View the list of all Employees.
+* Employee-Details Page : Select an employee on the Landing page and it will display all the details of the selected employee.
+* Rating : On the Employee-Details page provision to rate the employee/ update the rating of the employee.
+    
+## Technologies
+Project is created with:
+* Angular: 8.3.8
+* BootStrap : 3.3.5
+    
+## Setup
+To run this project, install it locally using npm:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+*************Local Developement************
 
-## Code scaffolding
+$ npm install
+$ ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+****************Local Testing************** 
 
-## Build
+$ ng test
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+*************Code Coverage Report**********
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+$ ng test --code-coverage
+```

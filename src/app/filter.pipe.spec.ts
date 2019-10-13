@@ -1,6 +1,8 @@
+/**
+ * Unit Test cases  for custom pipe Filter
+ */
 import { FilterPipe } from './filter.pipe';
 import { EmployeeDetail } from './employee-list/employee-details/employee.model';
-
 
 describe('FilterPipe', () => {
 
@@ -17,8 +19,8 @@ describe('FilterPipe', () => {
       "currentProjectName": "Tin",
       "hobbies": "Mule deer",
       "rating": 3
-  },
-  {
+    },
+    {
       "employeeId": "05-6747529",
       "lastName": "Waby",
       "mobileNumber": "+48 517 329 9339",
@@ -29,7 +31,7 @@ describe('FilterPipe', () => {
       "currentProjectName": "Kanlam",
       "hobbies": "Bustard, stanley",
       "rating": 5
-  }];
+    }];
   let searchQuery: string;
   let searchLabel: string;
 
@@ -39,7 +41,7 @@ describe('FilterPipe', () => {
 
   it(`should return null if there are 'no items'`, () => {
     expect(pipe.transform([], searchQuery, searchLabel)).toEqual([]);
-  });  
+  });
 
   it('should return filtered value', () => {
     searchQuery = '80-';
@@ -61,7 +63,7 @@ describe('FilterPipe', () => {
   it(`should return complete list of employees if search query is 'null/not provided'`, () => {
     searchQuery = '';
     searchLabel = 'someDummyLabel';
-    
+
     expect(pipe.transform(employeeDetails, searchQuery, searchLabel)).toEqual(employeeDetails);
   });
 

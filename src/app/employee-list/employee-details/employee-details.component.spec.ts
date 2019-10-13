@@ -1,5 +1,7 @@
+/**
+ * Unit test cases for custom component employee-details
+ */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EmployeeDetailsComponent } from './employee-details.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
@@ -45,22 +47,22 @@ describe('EmployeeDetailsComponent', () => {
     expect(compiled.querySelector('div.panel-heading').textContent).toContain('Employee Details');
   });
 
-  it (`should create the panel header for 'Personal Information'`, () => {
+  it(`should create the panel header for 'Personal Information'`, () => {
     let compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div.panel-heading.personal-info').textContent).toContain('Personal Information');
   });
 
-  it (`should create the panel header for ' Work Information'`, () => {
+  it(`should create the panel header for ' Work Information'`, () => {
     let compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div.panel-heading.work-info').textContent).toContain('Work Information');
   });
 
-  it (`should create the panel header for 'Performance Information'`, () => {
+  it(`should create the panel header for 'Performance Information'`, () => {
     let compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div.panel-heading.performance-info').textContent).toContain('Performance');
   });
 
-  it (`should invoke the 'Employee Service'`, () => {
+  it(`should invoke the 'Employee Service'`, () => {
     let employeeService = fixture.debugElement.injector.get(EmployeeService);
     const emailId = component.empId = '80-2558669';
     const employeeDetails: EmployeeDetail = {
@@ -74,11 +76,11 @@ describe('EmployeeDetailsComponent', () => {
       currentProjectName: 'Tin',
       hobbies: 'Mule deer',
       rating: 3
-  };
+    };
     expect(employeeService.getEmployeeDetailsById(emailId)).toEqual(employeeDetails);
   });
 
-  it ('should toggle the rating flag ', () => {
+  it('should toggle the rating flag ', () => {
     component.notificationFlag = false;
     expect(component.updateRating());
   });
