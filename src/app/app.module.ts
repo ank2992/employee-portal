@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './employee-list/employee-details/employee-details.component';
 import { EmployeeService } from './employee-list/employee.service';
-import { FilterPipe } from './filter.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 const appRoutes: Routes = [
   { 'path': '', component: EmployeeListComponent },
   { 'path': 'employee-details/:id', component: EmployeeDetailsComponent }

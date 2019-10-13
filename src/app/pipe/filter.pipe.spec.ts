@@ -1,8 +1,8 @@
 /**
  * Unit Test cases  for custom pipe Filter
  */
-import { FilterPipe } from './filter.pipe';
-import { EmployeeDetail } from './employee-list/employee-details/employee.model';
+import { FilterPipe } from '../pipe/filter.pipe';
+import { EmployeeDetail } from '../employee-list/employee-details/employee.model';
 
 describe('FilterPipe', () => {
 

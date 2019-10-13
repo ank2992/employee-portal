@@ -1,7 +1,7 @@
 
 .panel-heading {
     background-color: #009900;
-    color: white;
+    color:white;
     font-size: large;
     font-weight: bold;
     text-align: center;
@@ -24,4 +24,8 @@
   .selectedButton{
     background-image: url(../../../assets/pictures/selected.PNG);
     background-size: 100%; 
+  }
+  .personal-info,.work-info,.performance-info{
+    background-color: #939393;
+    color:black;
   }

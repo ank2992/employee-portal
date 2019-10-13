@@ -6,7 +6,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { EmployeeListComponent } from './employee-list.component';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FilterPipe } from '../filter.pipe';
+import { FilterPipe } from '../pipe/filter.pipe';
 import { EmployeeService } from './employee.service';
 import { EmployeeDetail } from './employee-details/employee.model.js';
 import { BarRatingModule } from "ngx-bar-rating";
