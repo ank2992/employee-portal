@@ -6,6 +6,11 @@
     text-align: center;
   }
   
+.table-header{
+  background-color: #939393;
+  color:black;
+}
+
   th, th, td{
     text-align: center;
   }
@@ -15,7 +20,7 @@
   }
   
   .employee-list-pagination /deep/ .ngx-pagination .current {
-    background: #ccdd77;
+    background: #009900;
   }
   .pointer {cursor: pointer;}
   

@@ -43,6 +43,7 @@ describe('EmployeeListComponent', () => {
     let compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div.panel-heading').textContent).toContain('Employee List');
   });
+
   it('should invoke EmployeeService in the component', () => {
     let empService = fixture.debugElement.injector.get(EmployeeService);
     const firstEmployeeRow: EmployeeDetail = {
@@ -57,7 +58,7 @@ describe('EmployeeListComponent', () => {
       hobbies: 'Mule deer',
       rating: 3
     };
-    expect(empService.getAllEmployeeDetails()[0]).toEqual(firstEmployeeRow);
+    empService.getAllEmployeeDetails().subscribe((result)=>expect(result[0]).toEqual(firstEmployeeRow));
   });
 
   it(`should populate the table correctly when page size is '1'`, () => {

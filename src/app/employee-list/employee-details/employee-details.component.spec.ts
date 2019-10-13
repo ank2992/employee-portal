@@ -64,7 +64,7 @@ describe('EmployeeDetailsComponent', () => {
 
   it(`should invoke the 'Employee Service'`, () => {
     let employeeService = fixture.debugElement.injector.get(EmployeeService);
-    const emailId = component.empId = '80-2558669';
+    const employeeId = component.empId = '80-2558669';
     const employeeDetails: EmployeeDetail = {
       employeeId: '80-2558669',
       lastName: 'Whittlesee',
@@ -77,7 +77,7 @@ describe('EmployeeDetailsComponent', () => {
       hobbies: 'Mule deer',
       rating: 3
     };
-    expect(employeeService.getEmployeeDetailsById(emailId)).toEqual(employeeDetails);
+    employeeService.getEmployeeDetailsById(employeeId).subscribe((result)=>expect(result).toEqual(employeeDetails));
   });
 
   it('should toggle the rating flag ', () => {

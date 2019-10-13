@@ -20,7 +20,7 @@ describe('EmployeeService', () => {
 
   it(`should fetch the complete Employee list when 'getAllEmployeeDetails() is invoked'`, () => {
     let employeeList = employeeListJson['default'];
-    expect(service.getAllEmployeeDetails()).toEqual(employeeList);
+    service.getAllEmployeeDetails().subscribe((result)=>expect(result).toEqual(employeeList));
   });
 
   it('should fetch the Employee details based on employeeId ', () => {
@@ -37,6 +37,6 @@ describe('EmployeeService', () => {
       hobbies: 'Mule deer',
       rating: 3
     };
-    expect(service.getEmployeeDetailsById(employeeId)).toEqual(employeeDetails);
+    service.getEmployeeDetailsById(employeeId).subscribe((result)=>expect(result).toEqual(employeeDetails));
   });
 });
