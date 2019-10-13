@@ -1,31 +1,37 @@
-
 .panel-heading {
-    background-color: #009900;
-    color:white;
-    font-size: large;
-    font-weight: bold;
-    text-align: center;
+  background-color: #009900;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
 }
 
-  .info-label{
-    text-align: left;
-  }
-  .info-data{
-    text-align: left;
-  }
-  .performance-panel{
-    text-align: center;
-  }
-  .ratings-button{
-     background-image: url(../../../assets/pictures/rating.jpg);
-     background-size: 100%;
+.info-label {
+  text-align: left;
+}
 
-  }
-  .selectedButton{
-    background-image: url(../../../assets/pictures/selected.PNG);
-    background-size: 100%; 
-  }
-  .personal-info,.work-info,.performance-info{
-    background-color: #939393;
-    color:black;
-  }
+.info-data {
+  text-align: left;
+}
+
+.performance-panel {
+  text-align: center;
+}
+
+.ratings-button {
+  background-image: url(../../../assets/pictures/rating.jpg);
+  background-size: 100%;
+
+}
+
+.selectedButton {
+  background-image: url(../../../assets/pictures/selected.PNG);
+  background-size: 100%;
+}
+
+.personal-info,
+.work-info,
+.performance-info {
+  background-color: #939393;
+  color: black;
+}

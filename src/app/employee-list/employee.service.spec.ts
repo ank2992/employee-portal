@@ -1,8 +1,6 @@
 /**
  * Unit testing for the custom service EmployeeService
  */
-import { TestBed } from '@angular/core/testing';
-
 import { EmployeeService } from './employee.service';
 import * as employeeListJson from '../../assets/data/data.json';
 import { EmployeeDetail } from './employee-details/employee.model';
