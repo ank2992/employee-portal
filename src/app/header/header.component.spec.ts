@@ -22,4 +22,14 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display the title',() => {
+    let compile=fixture.debugElement.nativeElement;
+  expect(compile.querySelector('a.tittle').textContent).toContain("Employee Portal");
+  });
+
+  it('should display the user name',() => {
+    let compile=fixture.debugElement.nativeElement;
+  expect(compile.querySelector('a.dropdown-toggle').textContent).toContain("Admin");
+  });
 });

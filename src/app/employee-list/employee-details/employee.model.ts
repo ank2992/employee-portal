@@ -1,14 +1,14 @@
 export class EmployeeDetail{
     public employeeId : string;
-    private lastName : string;
-    private mobileNumber : string;
-    private emailId : string;
-    private gender : string;
-    private workAddress : string;
-    private homeAddress : string;
-    private currentProjectName : string;
-    private hobbies : string;
-    private rating:number;
+    public lastName : string;
+    public mobileNumber : string;
+    public emailId : string;
+    public gender : string;
+    public workAddress : string;
+    public homeAddress : string;
+    public currentProjectName : string;
+    public hobbies : string;
+    public rating:number;
 
     constructor(empId : string,lastName : string,
         mobileNumber : string,emailId : string,gender : string,workAddress : string,
@@ -24,12 +24,6 @@ export class EmployeeDetail{
             this.hobbies=hobbies;
             this.rating=rating;
 
-    }
-     public getEmpId():string{
-        return this.employeeId;
-    }
-    setRatings(rating:number){
-    this.rating=rating;
     }
     
 }
