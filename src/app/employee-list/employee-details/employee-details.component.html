@@ -7,7 +7,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <!-- Start : Information Row -->
-                            <div class="row">
+                            <div class="row" *ngIf="isDetailsFetched">
                                 <!-- Start : Personal Information column -->
                                 <div class="col-xs-6">
                                     <div class="panel-group">
@@ -176,6 +176,9 @@
                                 </div>
                                 <!-- Rating Info Ends -->
                                 <!-- End : Information Row -->
+                            </div>
+                            <div *ngIf="!isDetailsFetched">
+                                ....loading
                             </div>
                         </div>
                     </div>

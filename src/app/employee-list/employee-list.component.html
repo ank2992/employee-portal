@@ -30,7 +30,7 @@
         <tr *ngFor="let employee of employeeList
               | filter:queryEmployeeId:'employeeId'
                | paginate: { itemsPerPage: 10, currentPage: pageNumber } ;"
-          [routerLink]="['employee-details', employee.employeeId]" class="pointer" >
+          class="pointer" (click)="navigateToEmployeeDetails(employee.employeeId)">
           <!-- <th scope="row">{{i+1}}</th> -->
           <th>{{employee.employeeId}}</th>
           <td>{{employee.lastName}}</td>

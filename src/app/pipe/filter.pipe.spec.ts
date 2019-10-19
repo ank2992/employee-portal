@@ -2,23 +2,23 @@
  * Unit Test cases  for custom pipe Filter
  */
 import { FilterPipe } from '../pipe/filter.pipe';
-import { EmployeeDetail } from '../employee-list/employee-details/employee.model';
+import { EmployeeDetail } from '../models/employee.model';
 
 describe('FilterPipe', () => {
 
   const pipe = new FilterPipe();
   const employeeDetails: EmployeeDetail[] = [
     {
-      "employeeId": "80-2558669",
-      "lastName": "Whittlesee",
-      "mobileNumber": "+63 351 975 2383",
-      "emailId": "awhittlesee0@spiegel.de",
-      "gender": "Female",
-      "workAddress": "15594 Stang Terrace",
-      "homeAddress": "4558 Bashford Parkway",
-      "currentProjectName": "Tin",
-      "hobbies": "Mule deer",
-      "rating": 3
+      "_employeeId": "80-2558669",
+      "_lastName": "Whittlesee",
+      "_mobileNumber": "+63 351 975 2383",
+      "_emailId": "awhittlesee0@spiegel.de",
+      "_gender": "Female",
+      "_workAddress": "15594 Stang Terrace",
+      "_homeAddress": "4558 Bashford Parkway",
+      "_currentProjectName": "Tin",
+      "_hobbies": "Mule deer",
+      "_rating": 3
     },
     {
       "employeeId": "05-6747529",

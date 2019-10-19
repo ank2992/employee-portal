@@ -1,6 +1,6 @@
 .panel-heading {
   background-color: #009900;
-  color: white;
+  color:#FFFFFF;
   font-size: large;
   font-weight: bold;
   text-align: center;
@@ -33,5 +33,5 @@
 .work-info,
 .performance-info {
   background-color: #939393;
-  color: black;
+  color:#000000;
 }

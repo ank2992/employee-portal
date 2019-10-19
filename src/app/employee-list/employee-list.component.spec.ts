@@ -7,9 +7,11 @@ import { EmployeeListComponent } from './employee-list.component';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FilterPipe } from '../pipe/filter.pipe';
-import { EmployeeService } from './employee.service';
-import { EmployeeDetail } from './employee-details/employee.model.js';
+
 import { BarRatingModule } from "ngx-bar-rating";
+import { EmployeeService } from '../services/employee.service';
+import { EmployeeDetail } from '../models/employee.model';
+
 
 describe('EmployeeListComponent', () => {
   let component: EmployeeListComponent;

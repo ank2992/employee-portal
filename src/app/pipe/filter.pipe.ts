@@ -2,7 +2,7 @@
  * Custom pipe to filter out the employees according to employeeId.
  */
 import { Pipe, PipeTransform } from '@angular/core';
-import { EmployeeDetail } from '../employee-list/employee-details/employee.model';
+import { EmployeeDetail } from '../models/employee.model';
 @Pipe({
   name: 'filter'
 })

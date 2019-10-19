@@ -1,9 +1,10 @@
 /**
  * Unit testing for the custom service EmployeeService
  */
-import { EmployeeService } from './employee.service';
+
 import * as employeeListJson from '../../assets/data/data.json';
 import { EmployeeDetail } from './employee-details/employee.model';
+import { EmployeeService } from '../services/employee.service.js';
 
 describe('EmployeeService', () => {
   let service: EmployeeService;

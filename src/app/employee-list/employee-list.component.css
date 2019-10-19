@@ -1,14 +1,13 @@
 .panel-heading {
     background-color: #009900;
-    color: white;
-    font-size: large;
+    color: #FFFFFF;
     font-weight: bold;
     text-align: center;
   }
   
 .table-header{
   background-color: #939393;
-  color:black;
+  color:#000000;
 }
 
   th, th, td{

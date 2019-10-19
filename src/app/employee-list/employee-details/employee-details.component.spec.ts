@@ -4,11 +4,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { EmployeeDetailsComponent } from './employee-details.component';
 import { FormsModule } from '@angular/forms';
-import { EmployeeService } from '../employee.service';
+
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
 import { BarRatingModule } from 'ngx-bar-rating';
-import { EmployeeDetail } from './employee.model';
+import { EmployeeDetail } from '../../models/employee.model';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 describe('EmployeeDetailsComponent', () => {
   let component: EmployeeDetailsComponent;
@@ -75,9 +76,10 @@ describe('EmployeeDetailsComponent', () => {
       homeAddress: '4558 Bashford Parkway',
       currentProjectName: 'Tin',
       hobbies: 'Mule deer',
-      rating: 3
+      rating: 3,
+
     };
-    employeeService.getEmployeeDetailsById(employeeId).subscribe((result)=>expect(result).toEqual(employeeDetails));
+    employeeService.getEmployeeDetailsById(employeeDetails.employeeId).subscribe((result)=>expect(result).toEqual(employeeDetails));
   });
 
   it('should toggle the rating flag ', () => {
