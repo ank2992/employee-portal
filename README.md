@@ -1,4 +1,5 @@
 # EmployeePortal
+[![Build Status](https://travis-ci.org/ank2992/employee-portal.svg?branch=master)](https://travis-ci.org/ank2992/employee-portal) [![Known Vulnerabilities](https://snyk.io//test/github/ank2992/employee-portal/badge.svg?targetFile=package.json)](https://snyk.io//test/github/ank2992/employee-portal?targetFile=package.json) 
 
 ## Table of contents
   - [General info](#general-info)
