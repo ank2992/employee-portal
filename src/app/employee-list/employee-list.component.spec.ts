@@ -1,27 +1,33 @@
 /**
  * Unit Testing for the custom component employee-list
  */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { EmployeeListComponent } from './employee-list.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BarRatingModule } from 'ngx-bar-rating';
+import { NgxPaginationModule } from 'ngx-pagination';
+import * as employeeListJson from '../../assets/data/data.json';
 import { FilterPipe } from '../pipe/filter.pipe';
-
-import { BarRatingModule } from "ngx-bar-rating";
 import { EmployeeService } from '../services/employee.service';
-import { EmployeeDetail } from '../models/employee.model';
+import { EmployeeListComponent } from './employee-list.component';
+import { of } from 'rxjs';
 
 
 describe('EmployeeListComponent', () => {
   let component: EmployeeListComponent;
   let fixture: ComponentFixture<EmployeeListComponent>;
+  let employeeService: EmployeeService;
+
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EmployeeListComponent,
         FilterPipe],
       imports: [
+        HttpClientTestingModule,
         FormsModule,
         RouterTestingModule,
         NgxPaginationModule,
@@ -36,36 +42,28 @@ describe('EmployeeListComponent', () => {
     fixture = TestBed.createComponent(EmployeeListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    employeeService = fixture.debugElement.injector.get(EmployeeService);
   });
+
+  afterEach(() => fixture.destroy());
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it(`should have panel heading as 'Employee List'`, () => {
-    let compiled = fixture.debugElement.nativeElement;
+    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div.panel-heading').textContent).toContain('Employee List');
   });
 
   it('should invoke EmployeeService in the component', () => {
-    let empService = fixture.debugElement.injector.get(EmployeeService);
-    const firstEmployeeRow: EmployeeDetail = {
-      employeeId: '80-2558669',
-      lastName: 'Whittlesee',
-      mobileNumber: '+63 351 975 2383',
-      emailId: 'awhittlesee0@spiegel.de',
-      gender: 'Female',
-      workAddress: '15594 Stang Terrace',
-      homeAddress: '4558 Bashford Parkway',
-      currentProjectName: 'Tin',
-      hobbies: 'Mule deer',
-      rating: 3
-    };
-    empService.getAllEmployeeDetails().subscribe((result)=>expect(result[0]).toEqual(firstEmployeeRow));
+    const empService = fixture.debugElement.injector.get(EmployeeService);
+    const employeeListFirst = employeeListJson['default'][0];
+    empService.getAllEmployeeDetails().subscribe((result) => expect(result[0]).toEqual(employeeListFirst));
   });
 
-  it(`should populate the table correctly when page size is '1'`, () => {
-    component.pageNumber = 1;
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('td').textContent).toContain('Whittlesee');
+  it('should invoke navigate to the Employee Details Page', () => {
+    component.navigateToEmployeeDetails('80-249890');
   });
+
 });

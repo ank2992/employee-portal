@@ -1,11 +1,12 @@
 /**
  * Unit test cases written for app component
  */
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { EmployeeService } from './employee-list/employee.service';
+import { EmployeeService } from './services/employee.service';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,7 +14,6 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         HeaderComponent,
-
       ],
       imports: [
         RouterTestingModule,

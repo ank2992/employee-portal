@@ -1,11 +1,11 @@
 /**
- *This is the custom component for employee-details 
+ *This is the custom component for employee-details
  */
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { EmployeeDetail } from '../../models/employee.model';
-import { EmployeeService } from 'src/app/services/employee.service';
 import { Subscription } from 'rxjs';
+import { EmployeeService } from 'src/app/services/employee.service';
+import { EmployeeDetail } from '../../models/employee.model';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class EmployeeDetailsComponent implements OnInit, OnDestroy {
   public employeeDetails: EmployeeDetail;
   public empId: string;
   public ratings: number;
-  public notificationFlag: boolean = false;
+  public notificationFlag = false;
   public isDetailsFetched = false;
   constructor(private activeRoute: ActivatedRoute, private employeeService: EmployeeService) {}
   /**
@@ -27,24 +27,24 @@ export class EmployeeDetailsComponent implements OnInit, OnDestroy {
  *also it will take the current path parameter employeeId and will pass it as a parameter to the
 *observable
    */
-  ngOnInit():void {
+  ngOnInit(): void {
     this.isDetailsFetched = false;
     this.employeeDetailsSubscription = this.activeRoute.params.subscribe(
       (params: Params) => {
-        this.empId = params['id']
+        this.empId = params['id'];
       }
     );
     this.employeeService.getEmployeeDetailsById(this.empId).subscribe((value) => {
       this.employeeDetails = value;
       this.isDetailsFetched = true;
       this.ratings = this.employeeDetails['rating'];
-    })
+    });
 
   }
   /**
    * this method updates the rating flag
    */
-  updateRating():void {
+  updateRating(): void {
     this.notificationFlag = true;
   }
 /**

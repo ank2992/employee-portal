@@ -18,7 +18,7 @@ export class EmployeeListComponent implements OnInit, OnDestroy {
 
   private employeeListSubscription: Subscription;
   public employeeList: EmployeeDetail[];
-  public pageNumber: number = 1;
+  public pageNumber = 1;
   constructor(private employeeService: EmployeeService, private router: Router) { }
 /**
  * In the ngOnInit event, the observable to get the employee details is subscribed
@@ -29,8 +29,8 @@ export class EmployeeListComponent implements OnInit, OnDestroy {
   }
 /**
  *  This method will navigate the to the employee details page of the clicked employee
- * @param employeeId 
- */  navigateToEmployeeDetails(employeeId: number) {
+ *
+ */  navigateToEmployeeDetails(employeeId: string) {
     this.router.navigate(['/employee-details', employeeId]);
   }
   /**

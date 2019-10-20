@@ -3,35 +3,12 @@
  */
 import { FilterPipe } from '../pipe/filter.pipe';
 import { EmployeeDetail } from '../models/employee.model';
+import * as employeeListJson from '../../assets/data/data.json';
 
 describe('FilterPipe', () => {
 
   const pipe = new FilterPipe();
-  const employeeDetails: EmployeeDetail[] = [
-    {
-      "_employeeId": "80-2558669",
-      "_lastName": "Whittlesee",
-      "_mobileNumber": "+63 351 975 2383",
-      "_emailId": "awhittlesee0@spiegel.de",
-      "_gender": "Female",
-      "_workAddress": "15594 Stang Terrace",
-      "_homeAddress": "4558 Bashford Parkway",
-      "_currentProjectName": "Tin",
-      "_hobbies": "Mule deer",
-      "_rating": 3
-    },
-    {
-      "employeeId": "05-6747529",
-      "lastName": "Waby",
-      "mobileNumber": "+48 517 329 9339",
-      "emailId": "cwaby1@utexas.edu",
-      "gender": "Female",
-      "workAddress": "7 Summit Point",
-      "homeAddress": "2738 Forest Run Hill",
-      "currentProjectName": "Kanlam",
-      "hobbies": "Bustard, stanley",
-      "rating": 5
-    }];
+  const employeeDetails: EmployeeDetail[] = employeeListJson['default'];
   let searchQuery: string;
   let searchLabel: string;
 
@@ -44,7 +21,7 @@ describe('FilterPipe', () => {
   });
 
   it('should return filtered value', () => {
-    searchQuery = '80-';
+    searchQuery = '80-255';
     searchLabel = 'employeeId';
     expect(pipe.transform(employeeDetails, searchQuery, searchLabel)).toEqual([{
       employeeId: '80-2558669',
@@ -68,7 +45,7 @@ describe('FilterPipe', () => {
   });
 
   it('should return null when label is dummy', () => {
-    searchQuery = '80-'
+    searchQuery = '80-';
     searchLabel = 'someDummyLabel';
     expect(pipe.transform(employeeDetails, searchQuery, searchLabel)).toEqual([]);
   });

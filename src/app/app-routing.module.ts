@@ -1,5 +1,5 @@
 /**
- * This is the routing component created  to handle all the routing of employee-portal  
+ * This is the routing component created  to handle all the routing of employee-portal
  * */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,7 +9,7 @@ const approutes: Routes = [
     { path: '', component: EmployeeListComponent },
     { path: 'employee-details/:id', component: EmployeeDetailsComponent }
 
-]
+];
 @NgModule({
     imports: [RouterModule.forRoot(approutes)],
     exports: [RouterModule]

@@ -25,12 +25,12 @@ describe('HeaderComponent', () => {
   });
 
   it('should display the title', () => {
-    let compile = fixture.debugElement.nativeElement;
-    expect(compile.querySelector('a.tittle').textContent).toContain("Employee Portal");
+    const compile = fixture.debugElement.nativeElement;
+    expect(compile.querySelector('a.tittle').textContent).toContain('Employee Portal');
   });
 
   it('should display the user name', () => {
-    let compile = fixture.debugElement.nativeElement;
-    expect(compile.querySelector('a.dropdown-toggle').textContent).toContain("Admin");
+    const compile = fixture.debugElement.nativeElement;
+    expect(compile.querySelector('a.dropdown-toggle').textContent).toContain('Admin');
   });
 });

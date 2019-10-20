@@ -30,55 +30,55 @@ export class EmployeeDetail {
     }
 
     get employeeId(): string {
-        return this._employeeId
+        return this._employeeId;
     }
     set employeeId(value) {
         this._employeeId = value;
     }
     get lastName(): string {
-        return this._lastName
+        return this._lastName;
     }
     set lastName(value) {
         this._lastName = value;
     }
     get mobileNumber(): string {
-        return this._mobileNumber
+        return this._mobileNumber;
     }
     set mobileNumber(value) {
         this._mobileNumber = value;
     }
     get emailId(): string {
-        return this._emailId
+        return this._emailId;
     }
     set emailId(value) {
         this._emailId = value;
     }
     get gender(): string {
-        return this._gender
+        return this._gender;
     }
     set gender(value) {
         this._gender = value;
     }
     get workAddress(): string {
-        return this._workAddress
+        return this._workAddress;
     }
     set workAddress(value) {
         this._workAddress = value;
     }
     get homeAddress(): string {
-        return this._homeAddress
+        return this._homeAddress;
     }
     set homeAddress(value) {
         this._homeAddress = value;
     }
     get currentProjectName(): string {
-        return this._currentProjectName
+        return this._currentProjectName;
     }
     set currentProjectName(value) {
         this._currentProjectName = value;
     }
     get hobbies(): string {
-        return this._hobbies
+        return this._hobbies;
     }
     set hobbies(value) {
         this._hobbies = value;

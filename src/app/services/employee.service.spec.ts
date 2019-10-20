@@ -3,39 +3,34 @@
  */
 
 import * as employeeListJson from '../../assets/data/data.json';
-import { EmployeeDetail } from './employee-details/employee.model';
-import { EmployeeService } from '../services/employee.service.js';
+import { EmployeeService } from '../services/employee.service';
+import { EmployeeDetail } from '../models/employee.model.js';
+import { of } from 'rxjs';
 
 describe('EmployeeService', () => {
-  let service: EmployeeService;
-  beforeEach(() => {
 
-    service = new EmployeeService();
+  let employeesService: EmployeeService;
+  let httpClientSpy: { get: jasmine.Spy };
+  beforeEach(() => {
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    employeesService = new EmployeeService(<any> httpClientSpy);
+
   });
 
   it('should start the Employee Service', () => {
-    expect(service).toBeTruthy;
+    expect(employeesService).toBeTruthy;
   });
 
   it(`should fetch the complete Employee list when 'getAllEmployeeDetails() is invoked'`, () => {
-    let employeeList = employeeListJson['default'];
-    service.getAllEmployeeDetails().subscribe((result)=>expect(result).toEqual(employeeList));
+    const employeeList: EmployeeDetail[] = employeeListJson['default'];
+    httpClientSpy.get.and.returnValue(of(employeeList));
+    employeesService.getAllEmployeeDetails().subscribe((result) => expect(result).toEqual(employeeList));
   });
 
   it('should fetch the Employee details based on employeeId ', () => {
     const employeeId = '80-2558669';
-    const employeeDetails: EmployeeDetail = {
-      employeeId: '80-2558669',
-      lastName: 'Whittlesee',
-      mobileNumber: '+63 351 975 2383',
-      emailId: 'awhittlesee0@spiegel.de',
-      gender: 'Female',
-      workAddress: '15594 Stang Terrace',
-      homeAddress: '4558 Bashford Parkway',
-      currentProjectName: 'Tin',
-      hobbies: 'Mule deer',
-      rating: 3
-    };
-    service.getEmployeeDetailsById(employeeId).subscribe((result)=>expect(result).toEqual(employeeDetails));
+    const employeeList: EmployeeDetail[] = employeeListJson['default'];
+    httpClientSpy.get.and.returnValue(of(employeeList));
+    employeesService.getEmployeeDetailsById(employeeId).subscribe((result) => expect(result).toEqual(employeeList[0]));
   });
 });
